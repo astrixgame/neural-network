@@ -12,13 +12,8 @@ function sigmoid(x = 0) {
 function train(x) {
     for(;x > 0;x--)
         for(var i = 0;i < inputs.length;i++) {
-            var output = predict(inputs[i]);
-            var eOutput = outputs[i];
-            
-            var error = eOutput - output;
-            var grad = error * inputs[i];
-            
-            weight += grad * learningRate;
+            var error = outputs[i] - predict(inputs[i]);
+            weight += error * inputs[i] * learningRate;
             bias += error * learningRate;
         }
 }
