@@ -22,5 +22,5 @@ train(100000);
 console.log(predict(5));
 
 function predict(x) {
-    return sigmoid(x*weight+bias);
+    return sigmoid(x * weight + bias);
 }
